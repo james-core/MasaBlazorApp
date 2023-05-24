@@ -1,0 +1,14 @@
+﻿@page "/user"
+<PageTitle>User</PageTitle>
+<h1>User</h1>
+
+<p role="status">Current Count:@count</p>
+<MButton Depressed Color="primary" @onclick="Add">Click me</MButton>
+@code {
+    private int count = 0;
+
+    private void Add()
+    {
+        count++;
+    }
+}

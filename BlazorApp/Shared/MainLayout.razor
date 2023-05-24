@@ -1,0 +1,54 @@
+﻿@inherits LayoutComponentBase
+
+<MApp>
+
+    <MAppBar Flat Fixed Color="white" Class="m-bar--underline" App>
+        <span>MasaBlazorApp</span>
+        <MSpacer></MSpacer>
+        <MButton Text><a href="#"></a></MButton>
+    </MAppBar>
+
+    <MNavigationDrawer Fixed Permanent Class="mt-16" App>
+        <MListItem Style="height:64px">
+            <MListItemContent>
+                <MListItemTitle Style="text-align:-webkit-center">
+                    <img src="https://cdn.masastack.com/stack/images/website/masa-blazor/logo.png" />
+                </MListItemTitle>
+            </MListItemContent>
+        </MListItem>
+        <MList Dense Nav>
+            <MListItem Link Href="/">
+                <MListItemIcon><MIcon>mdi-home-circle-outline</MIcon></MListItemIcon>
+                <MListItemContent>
+                    <MListItemTitle>Home</MListItemTitle>
+                </MListItemContent>
+            </MListItem>
+            <MListItem Link Href="User">
+                <MListItemIcon><MIcon>mdi-account-box</MIcon></MListItemIcon>
+                <MListItemContent>
+                    <MListItemTitle>user</MListItemTitle>
+                </MListItemContent>
+            </MListItem>
+            <MListItem Link Href="car">
+                <MListItemIcon><MIcon>mdi-car-back</MIcon></MListItemIcon>
+                <MListItemContent>
+                    <MListItemTitle>Car</MListItemTitle>
+                </MListItemContent>
+            </MListItem>
+        </MList>
+    </MNavigationDrawer>
+
+
+    <!-- 根据应用组件来调整你的内容 -->
+    <MMain>
+        <!-- 给应用提供合适的间距 -->
+        <MContainer Fluid>
+              @Body
+        </MContainer>
+    </MMain>
+
+    <MFooter App>
+        <!-- -->
+    </MFooter>
+</MApp>
+

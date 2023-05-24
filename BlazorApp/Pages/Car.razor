@@ -1,0 +1,43 @@
+﻿@page "/car"
+
+<PageTitle>Car</PageTitle>
+
+<MDataTable Headers="_headers" Items="_desserts" ItemsPerPage="5" Class="elevation-1"></MDataTable>
+
+
+@code {
+    private List<DataTableHeader<Dessert>> _headers = new List<DataTableHeader<Dessert>>
+            {
+                // 必须指定一个列头
+                new (){ Text="name",Align="start",Sortable=false,Value=nameof(Dessert.name)},
+                new (){ Text="count",Align="start",Sortable=false,Value=nameof(Dessert.count)},
+                new (){ Text="price",Align="start",Sortable=false,Value=nameof(Dessert.price)},
+            };
+
+    private List<Dessert> _desserts = new List<Dessert> { };
+
+    protected override Task OnInitializedAsync()
+    {
+        GetList();
+        return base.OnInitializedAsync();
+    }
+
+    private void GetList()
+    {
+        _desserts = new List<Dessert>();
+        for (int i = 1; i < 100; i++)
+        {
+            _desserts.Add(new Dessert { name = "汽车"+i, count = 100+i, price = 10000+i });
+        };
+    }
+
+
+    public class Dessert
+    {
+        public string name { get; set; }
+        public int count { get; set; }
+        public int price { get; set; }
+    }
+
+
+}
